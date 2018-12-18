@@ -28,13 +28,11 @@ class KeyListener extends React.Component {
     window.addEventListener('keydown', this.handleKeyDown)
   }
   render() {
-    const { children } = this.props
-
-    const childrenWithContext = React.Children.map(children, child => {
-      React.cloneElement(child, { currentKey: this.state.currentKey })
+    const children = React.Children.map(this.props.children, child => {
+      return React.cloneElement(child, { currentKey: this.state.currentKey })
     })
     return (
-      <React.Fragment>{childrenWithContext}</React.Fragment>
+      <div>{children}</div>
     )
   }
 }

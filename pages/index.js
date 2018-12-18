@@ -1,12 +1,16 @@
+import { withRouter } from 'next/router'
+
 import KeyListener from '../components/KeyListener'
-import Key from '../components/Key'
+import KeyTable from '../components/KeyTable'
+import KeyElementCard from '../components/KeyElementCard';
 
 const Index = () => (
 
     <KeyListener>
-      <Key />
+      <KeyTable />
+      <KeyElementCard />
     </KeyListener>
 
 )
 
-export default Index
+export default withRouter(Index)
